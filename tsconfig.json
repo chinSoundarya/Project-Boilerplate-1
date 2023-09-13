@@ -22,9 +22,7 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true
     },
-    "include": [
-        "./test/specs/**/*.ts"
-, "testscript.ts"    ],
+    "include": ["./test/specs/**/*.ts"],
  "exclude": [
         // 'path/to/excluded/files'
     ],
