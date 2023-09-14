@@ -1,20 +1,22 @@
-import { remote } from 'webdriverio';
+import * as assert from 'assert';
 
-async function main() {
-  const browser = await remote({
-    capabilities: {
-      browserName: 'chrome', // You can change this to 'firefox' or other browsers
-    },
+describe('Retirement Calculator', () => {
+  it('should calculate retirement savings', () => {
+    browser.url('https://www.securian.com/insights-tools/retirement-calculator.html');
+    
+    // Add test logic here to interact with the retirement calculator form elements,
+    // fill in the required fields, and submit the form.
+    
+    // Example:
+    $('#currentAge').setValue('40');
+    $('#retirementAge').setValue('68');
+    
+    // Perform other actions like clicking buttons, toggling options, and submitting the form.
+    
+    // Assertions can be added to validate the results.
+    
+    // Example:
+    const result = $('#result').getText();
+    assert.strictEqual(result, 'Expected Result', 'Retirement calculation is incorrect');
   });
-
-  await browser.url('https://www.securian.com/insights-tools/retirement-calculator.html');
-
-  // Perform actions and assertions here
-  // Example:
-  // const title = await browser.getTitle();
-  // expect(title).toBe('Expected Page Title');
-
-  await browser.deleteSession();
-}
-
-main();
+});
